@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="assets/logo.png" width="180"/>
+  <img src="assets/logo.png" width="200"/>
 </p>
 
-<h1 align="center">🎧 Sonara</h1>
+<h1 align="center">🎧 Sonora</h1>
 
 <p align="center">
 <b>🇫🇷 Découvre une nouvelle musique chaque jour.</b><br>
@@ -13,17 +13,17 @@
 
 # 📖 About
 
-**Sonara** is a mobile application built with **Flutter** that helps users  
+**Sonora** is a mobile application built with **Flutter** that helps users  
 **discover new music every day**.
 
-Users can:
+The application focuses on **music discovery**, allowing users to:
 
 - Discover new songs
 - Save songs as favorites
-- Add songs directly to their **Spotify account**
+- View previously discovered songs
+- Add songs to their **Spotify account** *(planned)*
 
-The goal of this project is to create a **simple and useful mobile app**  
-focused on music discovery.
+Sonora is designed to be simple, useful, and easy to use.
 
 ---
 
@@ -32,10 +32,10 @@ focused on music discovery.
 ## Current Features (MVP)
 
 - 🎧 Discover a daily song
-- ⭐ Add songs to favorites (inside the app)
-- ⏭️ Skip songs
+- ⭐ Add songs to favorites
 - 📜 View song history
-- 💾 Save preferences locally
+- ⏭️ Skip songs
+- 💾 Save favorites locally
 
 ---
 
@@ -43,7 +43,7 @@ focused on music discovery.
 
 - 🎵 Connect Spotify account
 - ➕ Add songs to Spotify favorites
-- 📱 Improve UI and navigation
+- 🎨 Improve UI design
 
 ---
 
@@ -58,28 +58,26 @@ focused on music discovery.
 
 # 🧱 Tech Stack
 
-This project uses simple and beginner-friendly technologies.
+## Mobile
 
-## Mobile Development
-
-- **Flutter**
-- **Dart**
-- **Android Studio**
+- Flutter
+- Dart
+- Android Studio
 
 ## Packages
 
-- `shared_preferences`  
-  Save favorites and history locally
+- shared_preferences  
+  (Store favorites and history locally)
 
-- `http` *(future)*  
-  Connect to Spotify API
+- http *(future)*  
+  (Spotify communication)
 
 ---
 
 # 📁 Project Structure
 
 ```text
-sonara/
+sonora/
 │
 ├── assets/
 │   └── logo.png
