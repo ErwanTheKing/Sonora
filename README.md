@@ -5,83 +5,74 @@
 <h1 align="center">🎧 Sonara</h1>
 
 <p align="center">
-<b>🇫🇷 Une nouvelle musique chaque jour, selon ta vibe.</b><br>
-<b>🇬🇧 A new song every day, tailored to your vibe.</b>
+<b>🇫🇷 Découvre une nouvelle musique chaque jour.</b><br>
+<b>🇬🇧 Discover a new song every day.</b>
 </p>
 
 ---
 
 # 📖 About
 
-**Sonara** is a mobile application built with **Flutter** that delivers  
-**one new song every day**, personalized to your music taste.
+**Sonara** is a mobile application built with **Flutter** that helps users  
+**discover new music every day**.
 
-Sonara helps users discover new music effortlessly.
+Users can:
 
----
+- Discover new songs
+- Save songs as favorites
+- Add songs directly to their **Spotify account**
 
-# 🚀 Features
-
-## 🎯 Mobile (MVP)
-
-- Select favorite genres
-- Daily music suggestion
-- Like / Skip system
-- Listening history
-- Local storage preferences
+The goal of this project is to create a **simple and useful mobile app**  
+focused on music discovery.
 
 ---
 
-## 🧩 Widgets (Planned)
+# 🎯 Features
 
-### Android
-- Home screen widget
-- Display daily song
-- Quick access to the app
+## Current Features (MVP)
 
-### iOS
-- WidgetKit support
-- Daily track preview
-- Synchronization with app
+- 🎧 Discover a daily song
+- ⭐ Add songs to favorites (inside the app)
+- ⏭️ Skip songs
+- 📜 View song history
+- 💾 Save preferences locally
 
 ---
 
-## 🌐 Web (Future)
+## Upcoming Features
 
-- Web version
-- Daily music dashboard
+- 🎵 Connect Spotify account
+- ➕ Add songs to Spotify favorites
+- 📱 Improve UI and navigation
+
+---
+
+# 📱 Platforms
+
+| Platform | Status |
+|----------|--------|
+| Android | 🟢 In development |
+| iOS | 🔜 Planned |
 
 ---
 
 # 🧱 Tech Stack
 
-## Mobile
+This project uses simple and beginner-friendly technologies.
 
-- Flutter
-- Dart
-- Android Studio
+## Mobile Development
 
-Packages:
+- **Flutter**
+- **Dart**
+- **Android Studio**
 
-- shared_preferences
-- home_widget
-- go_router
-- flutter_riverpod
+## Packages
 
----
+- `shared_preferences`  
+  Save favorites and history locally
 
-## Android
-
-- Kotlin
-- Android AppWidget
-
----
-
-## iOS
-
-- Swift
-- SwiftUI
-- WidgetKit
+- `http` *(future)*  
+  Connect to Spotify API
 
 ---
 
@@ -95,14 +86,21 @@ sonara/
 │
 ├── lib/
 │   ├── main.dart
-│   ├── app.dart
-│   │
+│
 │   ├── models/
+│   │   └── track.dart
+│
 │   ├── services/
+│   │   ├── daily_track_service.dart
+│   │   └── spotify_service.dart
+│
 │   ├── screens/
-│   └── widgets/
+│   │   ├── today_screen.dart
+│   │   ├── favorites_screen.dart
+│   │   └── history_screen.dart
 │
 ├── android/
 ├── ios/
-├── web/
-└── README.md
+│
+├── README.md
+└── .gitignore
