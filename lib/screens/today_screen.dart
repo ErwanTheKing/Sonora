@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sonora/models/track.dart';
+import 'package:sonora/screens/favorites_screen.dart';
 import 'package:sonora/services/favorites_service.dart';
 
 class TodayScreen extends StatefulWidget {
@@ -27,8 +28,7 @@ class _TodayScreenState extends State<TodayScreen> {
   }
 
   Future<void> _loadFavoriteStatus() async {
-    final isFavorite =
-    await _favoritesService.isFavorite(widget.track.id);
+    final isFavorite = await _favoritesService.isFavorite(widget.track.id);
 
     setState(() {
       _isFavorite = isFavorite;
@@ -39,8 +39,7 @@ class _TodayScreenState extends State<TodayScreen> {
   Future<void> _toggleFavorite() async {
     await _favoritesService.toggleFavorite(widget.track.id);
 
-    final isFavorite =
-    await _favoritesService.isFavorite(widget.track.id);
+    final isFavorite = await _favoritesService.isFavorite(widget.track.id);
 
     setState(() {
       _isFavorite = isFavorite;
@@ -54,6 +53,16 @@ class _TodayScreenState extends State<TodayScreen> {
         title: const Text('Sonora'),
         centerTitle: true,
         actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => const FavoritesScreen(),
+                ),
+              );
+            },
+            icon: const Icon(Icons.library_music),
+          ),
           if (_isLoadingFavorite)
             const Padding(
               padding: EdgeInsets.only(right: 16),
@@ -99,6 +108,7 @@ class _TodayScreenState extends State<TodayScreen> {
                   'assets/logo.png',
                   width: 200,
                   height: 200,
+                  fit: BoxFit.cover,
                 ),
               ),
               const SizedBox(height: 24),
@@ -131,9 +141,7 @@ class _TodayScreenState extends State<TodayScreen> {
               ElevatedButton.icon(
                 onPressed: _isLoadingFavorite ? null : _toggleFavorite,
                 icon: Icon(
-                  _isFavorite
-                      ? Icons.favorite
-                      : Icons.favorite_border,
+                  _isFavorite ? Icons.favorite : Icons.favorite_border,
                 ),
                 label: Text(
                   _isFavorite
